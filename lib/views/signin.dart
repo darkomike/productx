@@ -17,7 +17,10 @@ class _SignInState extends State<SignIn> {
   bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
+    final _height = MediaQuery.of(context).size.height;
+    final _width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
         title:Text(
@@ -31,16 +34,27 @@ class _SignInState extends State<SignIn> {
         child: Form(
           child: ListView(
             children: [
+
+              Container(
+                height: _height /7,
+                child: Image.asset("assets/login.png"),
+                width: _width/8.5,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Text(
-                  "Welcome back!",
-                  style:GoogleFonts.nunito(color: Colors.black, fontSize: 20),
+                  "Welcome back! Please sign in.",
+                  style:GoogleFonts.nunito(color: Colors.black, fontSize: 18),
                 ),
               ),
               SizedBox(
                 height: 20,
               ),
+
               Container(
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
@@ -124,7 +138,7 @@ class _SignInState extends State<SignIn> {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (_) => SignUp()));
                         },
-                        child: Text(" Create Account", style:GoogleFonts.workSans(color: Colors.blue, fontSize: 17, ),))
+                        child: Text(" Sign Up", style:GoogleFonts.workSans(color: Colors.blue, fontSize: 17, ),))
                   ],
                 ),
               ),

@@ -19,6 +19,8 @@ class _SignUpState extends State<SignUp> {
   bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
+    final _height = MediaQuery.of(context).size.height;
+    final _width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -34,17 +36,25 @@ class _SignUpState extends State<SignUp> {
         child: Form(
           child: ListView(
             children: [
+              Container(
+                height: _height /7,
+                child: Image.asset("assets/programmer.png"),
+                width: _width/8.5,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Text(
-                  "Let's get started",
-                  style:GoogleFonts.nunito(color: Colors.black, fontSize: 20),
+                  "Let's get started! Please create an account.",
+                  style:GoogleFonts.nunito(color: Colors.black, fontSize: 18),
                 ),
               ),
               SizedBox(
                 height: 20,
               ),
-
 
               Container(
                 padding: EdgeInsets.all(5),
@@ -142,7 +152,7 @@ class _SignUpState extends State<SignUp> {
                 child: Wrap(
                   children: [
                     Text(
-                        "By creating this account I have read and accepted the  ", style: TextStyle(fontSize: 15)),
+                        "By creating this account I have read and accepted the ", style: TextStyle(fontSize: 15)),
                     GestureDetector(
                         onTap: () {}, child: Text("Terms of Service", style: TextStyle(color: Colors.blue, fontSize: 15))),
                     Text(" and ", style: TextStyle(fontSize: 15)),

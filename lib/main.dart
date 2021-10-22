@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white
 
       ),
-      home: SignIn(),
+      home: SplashScreen(),
     );
   }
 }
