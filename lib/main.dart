@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:productx/views/home.dart';
 import 'package:productx/views/signin.dart';
 import 'package:productx/views/splashScreen.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white
 
       ),
-      home: SplashScreen(),
+      home: Home(),
     );
   }
 }
