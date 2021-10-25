@@ -35,11 +35,7 @@ class _SignInState extends State<SignIn> {
           child: ListView(
             children: [
 
-              Container(
-                height: _height /7,
-                child: Image.asset("assets/login.png"),
-                width: _width/8.5,
-              ),
+              SignInImage(height: _height, width: _width),
               SizedBox(
                 height: 10,
               ),
@@ -106,24 +102,12 @@ class _SignInState extends State<SignIn> {
               SizedBox(
                 height: 5,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  GestureDetector(
-                      onTap: () {}, child: Text("Forgot password?", style: TextStyle(color: Colors.blue, fontSize:18),)),                ],
-              ),
+              ForgotPassword(),
               SizedBox(
                 height: 5,
               ),
 
-              Container(
-                  height: 55,
-                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child:
-                  ElevatedButton.icon( icon: Icon(Icons.login_sharp), style: ElevatedButton.styleFrom( shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                      primary: Color(0xFF0FABBC)
-                  ),
-                      onPressed: () {}, label: Text("Sign In",style: GoogleFonts.nunito(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold)))),
+              CustomButton(),
               SizedBox(
                 height: 3,
               ),
@@ -146,6 +130,60 @@ class _SignInState extends State<SignIn> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 55,
+        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        child:
+        ElevatedButton.icon( icon: Icon(Icons.login_sharp), style: ElevatedButton.styleFrom( shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            primary: Color(0xFF0FABBC)
+        ),
+            onPressed: () {}, label: Text("Sign In",style: GoogleFonts.nunito(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold))));
+  }
+}
+
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        GestureDetector(
+            onTap: () {}, child: Text("Forgot password?", style: TextStyle(color: Colors.blue, fontSize:18),)),                ],
+    );
+  }
+}
+
+class SignInImage extends StatelessWidget {
+  const SignInImage({
+    Key? key,
+    required double height,
+    required double width,
+  }) : _height = height, _width = width, super(key: key);
+
+  final double _height;
+  final double _width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: _height /7,
+      child: Image.asset("assets/login.png"),
+      width: _width/8.5,
     );
   }
 }
