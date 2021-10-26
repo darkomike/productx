@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:productx/views/home.dart';
-import 'package:productx/views/signin.dart';
-import 'package:productx/views/splashScreen.dart';
+import 'package:productx/views/edit_profile.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -12,14 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Product X',
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         accentColor: Colors.white
 
       ),
-      home: Home(),
+      home: CompleteProfile(),
     );
   }
 }
