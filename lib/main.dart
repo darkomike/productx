@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:productx/views/edit_profile.dart';
+import 'package:productx/views/reminder.dart';
 
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white
 
       ),
-      home: CompleteProfile(),
+      home: Reminder(),
     );
   }
 }
