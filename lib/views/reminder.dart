@@ -86,6 +86,7 @@ class _ReminderState extends State<Reminder>
         ),
         body: TabBarView(
           controller: _tabController,
+
           physics: ScrollPhysics(),
           children: [
             buildMyReminders(),

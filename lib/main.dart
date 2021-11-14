@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:productx/views/edit_profile.dart';
+import 'package:productx/views/profile.dart';
 import 'package:productx/views/reminder.dart';
 
 
@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        accentColor: Colors.white
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white)
 
       ),
-      home: Reminder(),
+      home: Profile(),
     );
   }
 }
